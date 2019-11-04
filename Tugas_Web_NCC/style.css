@@ -7,7 +7,6 @@ body{
 }
 
 #header{
-    border: 1px solid black;
     width: 100%;
     height: 120px;
     background: black;
@@ -17,23 +16,22 @@ body{
 #wrapper{
     width: 700px;
     height: auto;
-    border: 1px solid black;
     margin: 0px auto;
 }
 
 #wrapper #main img{
     width: 700px;
     height: 300px;
+    border: 1px solid gray;
 }
 
 #main{
-    border: 1px solid black;
     height: 300px;
 }
 
 #footer{
     height: 40px;
-    border: 1px solid black;
+    border-top: 1px solid gray;
     text-align: center;
 }
 
@@ -56,14 +54,30 @@ body{
     color: black;
 }
 
-#header #nav a:hover{
+#header #nav ul li a:hover{
     color: red;
 }
 
-#header #nav a:visited{
-    color: purple;
+#header #logo img{
+    margin-left: -300px;
 }
 
-#header #logo img{
-    margin-left: -470px;
+#wrapper #table1 {
+    width: 700px;
+    height: 200px;
+    table-layout: fixed;
+}
+
+#wrapper #table1 td{
+    background: gray;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px blue;
+}
+
+#wrapper #table1 td h3{
+    text-align: center;
+    font-family: pristina;
+    font-size: 20px;
 }
