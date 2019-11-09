@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
     <html>
         <head>
@@ -7,9 +9,6 @@
               <meta name = "keywords" content = "Hotels, Booking, Vacation"  />
               <meta name = "author" content = "SinHendrix"  />
               <link rel="stylesheet" href="style.css" type="text/css" />
-
-
-
 
         </head>
 
