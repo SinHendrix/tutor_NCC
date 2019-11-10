@@ -16,7 +16,7 @@
         <body>
 
             <div id ="header" > 
-                <div id="logo"><a href="index.php"><img src = "img/4.png" width = "120px" height = "120px"/></a></div>
+            <div id="logo"><a href="main.php"><img src = "img/4.png" width = "120px" height = "120px"/></a></div>
                 <div id= "nav">
                     <ul>
                         <li><a href = "index.php"> Home </a></li>

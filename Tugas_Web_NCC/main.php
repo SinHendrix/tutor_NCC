@@ -1,12 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['username'])){
-    header('location:login.php');
-}else{
-    $username = $_SESSION['username'];
-}
-?>
-
 <!DOCTYPE html>
     <html>
         <head>
@@ -22,7 +13,7 @@ if(!isset($_SESSION['username'])){
         <body>
 
             <div id ="header" > 
-                <div id="logo"><a href="index.php"><img src = "img/4.png" width = "120px" height = "120px"/></a></div>
+            <div id="logo"><a href="main.php"><img src = "img/4.png" width = "120px" height = "120px"/></a></div>
                 <div id= "nav">
                     <ul>
                         <li><a href = "logout.php"> Logout </a></li>
@@ -35,7 +26,41 @@ if(!isset($_SESSION['username'])){
 
             <div id ="wrapper" >
 
-            <div id ="main" > <img src = "img/1.jpg"/> </div>
+            <?php 
+  
+
+		include 'connection.php';
+		session_start();
+if (!isset($_SESSION['username'])){
+	header("Location:./index.php");
+	}
+	$user=mysqli_query($koneksi,"select * from user where id_user='$_SESSION[id]'");
+  $duser = mysqli_fetch_array($user);
+  ?>
+  <article> <div class="judul">Hai <?php echo $duser['nama']; ?>, selamat datang di Bibil!</div> </article>
+  <?php
+ $data = mysqli_query($koneksi,"select * from kamar");
+		while($d = mysqli_fetch_array($data)){
+			?>
+			<article style="text-align: justify;">
+				<div class="judul"><h1>	<?php echo $d['judul']; ?> </h1></div>
+					
+				<img src="<?php echo "tampil.php?id=".$d['id_artikel']; ?>" class="gambar" style="float: left">
+				<div> <?php echo $d['isi']; ?> </div>
+				<?php $data2 = mysqli_query($koneksi,"select nama from user where id_user='$d[user]'"); ?>
+				<?php $dat = mysqli_fetch_array($data2) ?>
+				<div> <p> <b> dipesan oleh <?php echo $dat['nama']; ?> </b> </p> </div>
+				<!-- <button><?php echo "<a href=\"simpan.php?id=$d[id_artikel]\">Download Gambar</a>"; ?></button> -->
+				
+			</article>
+			
+			
+			<?php 
+		}
+		?>
+
+
+</section>
 
             <table id="table1" cellspacing = "50">
                 <tr>
